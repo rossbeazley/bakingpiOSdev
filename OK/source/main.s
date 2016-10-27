@@ -3,22 +3,31 @@
 _start:
 
 
-ldr r0,=0x20200000
+b main
 
-# set gpio 16 to output
-mov r1,#1
-lsl r1,#18
-str r1,[r0,#4]
-# end set gpio 16 to output
+.section .text
+main:
+mov sp,#0x8000
+
+/* enable output on pin 16 */
+pinNum .req r0
+pinFunc .req r1
+mov pinNum,#16
+mov pinFunc,#1
+bl SetGpioFunction
+.unreq pinNum
+.unreq pinFunc
 
 loop$: 
 
-# write to gpio 16
-mov r1,#1
-lsl r1,#16
-str r1,[r0,#40]
-# end write to gpio 16
-
+/* turn pin 16 on */
+pinNum .req r0
+pinVal .req r1
+mov pinNum,#16
+mov pinVal,#0
+bl SetGpio
+.unreq pinNum
+.unreq pinVal
 
 # sleep a bit
 mov r2,#0x0F0000
@@ -28,11 +37,17 @@ cmp r2,#0
 bne wait1$
 # end sleep a bit
 
-# reset to gpio 16
-mov r1,#1
-lsl r1,#16
-str r1,[r0,#28]
-# end reset to gpio 16
+
+/* turn pin 16 off */
+pinNum .req r0
+pinVal .req r1
+mov pinNum,#16
+mov pinVal,#1
+bl SetGpio
+.unreq pinNum
+.unreq pinVal
+
+
 
 # sleep a bit
 mov r2,#0x0F0000

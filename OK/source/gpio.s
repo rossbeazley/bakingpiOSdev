@@ -49,4 +49,18 @@ lsl pinBank,#2
 add gpioAddr,pinBank
 .unreq pinBank
 
+and pinNum,#31
+setBit .req r3
+mov setBit,#1
+lsl setBit,pinNum
+.unreq pinNum
+
+teq pinVal,#0
+.unreq pinVal
+streq setBit,[gpioAddr,#40]
+strne setBit,[gpioAddr,#28]
+.unreq setBit
+.unreq gpioAddr
+pop {pc}
+
 
