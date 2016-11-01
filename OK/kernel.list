@@ -59,19 +59,32 @@ Disassembly of section .text:
     8094:	e3a00010 	mov	r0, #16
     8098:	e3a01000 	mov	r1, #0
     809c:	ebffffe8 	bl	8044 <SetGpio>
-    80a0:	e3a0280f 	mov	r2, #983040	; 0xf0000
+    80a0:	e3a00004 	mov	r0, #4
+    80a4:	eb000009 	bl	80d0 <WaitForSeconds>
+    80a8:	e3a00010 	mov	r0, #16
+    80ac:	e3a01001 	mov	r1, #1
+    80b0:	ebffffe3 	bl	8044 <SetGpio>
+    80b4:	e3a0280f 	mov	r2, #983040	; 0xf0000
 
-000080a4 <wait1$>:
-    80a4:	e2422001 	sub	r2, r2, #1
-    80a8:	e3520000 	cmp	r2, #0
-    80ac:	1afffffc 	bne	80a4 <wait1$>
-    80b0:	e3a00010 	mov	r0, #16
-    80b4:	e3a01001 	mov	r1, #1
-    80b8:	ebffffe1 	bl	8044 <SetGpio>
-    80bc:	e3a0280f 	mov	r2, #983040	; 0xf0000
-
-000080c0 <wait2$>:
-    80c0:	e2422001 	sub	r2, r2, #1
-    80c4:	e3520000 	cmp	r2, #0
-    80c8:	1afffffc 	bne	80c0 <wait2$>
+000080b8 <wait2$>:
+    80b8:	e2422001 	sub	r2, r2, #1
+    80bc:	e3520000 	cmp	r2, #0
+    80c0:	1afffffc 	bne	80b8 <wait2$>
+    80c4:	e3a00002 	mov	r0, #2
+    80c8:	eb000000 	bl	80d0 <WaitForSeconds>
     80cc:	eafffff0 	b	8094 <loop$>
+
+000080d0 <WaitForSeconds>:
+    80d0:	e59f401c 	ldr	r4, [pc, #28]	; 80f4 <while$1+0x14>
+    80d4:	e59f901c 	ldr	r9, [pc, #28]	; 80f8 <while$1+0x18>
+    80d8:	e0080990 	mul	r8, r0, r9
+    80dc:	e1c460d4 	ldrd	r6, [r4, #4]
+
+000080e0 <while$1>:
+    80e0:	e1c4a0d4 	ldrd	sl, [r4, #4]
+    80e4:	e04ac006 	sub	ip, sl, r6
+    80e8:	e15c0008 	cmp	ip, r8
+    80ec:	9afffffb 	bls	80e0 <while$1>
+    80f0:	e1a0f00e 	mov	pc, lr
+    80f4:	20003000 	.word	0x20003000
+    80f8:	000f4240 	.word	0x000f4240

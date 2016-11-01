@@ -30,12 +30,14 @@ bl SetGpio
 .unreq pinVal
 
 # sleep a bit
-mov r2,#0x0F0000
-wait1$:
-sub r2,#1
-cmp r2,#0
-bne wait1$
+#mov r2,#0x0F0000
+#wait1$:
+#sub r2,#1
+#cmp r2,#0
+#bne wait1$
 # end sleep a bit
+mov r0, #4
+bl WaitForSeconds
 
 
 /* turn pin 16 off */
@@ -56,6 +58,9 @@ sub r2,#1
 cmp r2,#0
 bne wait2$
 # end sleep a bit
+
+mov r0, #2
+bl WaitForSeconds
 
 
 b loop$
