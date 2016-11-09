@@ -48,8 +48,8 @@ bl SetGpio
 .unreq pinVal
 
 # sleep a bit
-mov r0, #1
-bl WaitForSeconds
+mov r0, #200
+bl WaitForMilliSeconds
 
 pop {ptrn,seq}
 
@@ -64,4 +64,8 @@ b loop$
 .align 2
 pattern:
 .int 0b11111111101010100010001000101010
+
+pattern2:
+.int 0b10101010111110101000101010101010
+
 

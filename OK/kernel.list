@@ -65,25 +65,39 @@ Disassembly of section .text:
     80ac:	e92d0030 	push	{r4, r5}
     80b0:	e3a00010 	mov	r0, #16
     80b4:	ebffffe2 	bl	8044 <SetGpio>
-    80b8:	e3a00001 	mov	r0, #1
-    80bc:	eb000004 	bl	80d4 <WaitForSeconds>
+    80b8:	e3a000c8 	mov	r0, #200	; 0xc8
+    80bc:	eb00000a 	bl	80ec <WaitForMilliSeconds>
     80c0:	e8bd0030 	pop	{r4, r5}
     80c4:	e2855001 	add	r5, r5, #1
     80c8:	e205503f 	and	r5, r5, #63	; 0x3f
     80cc:	eafffff3 	b	80a0 <loop$>
-    80d0:	00008100 	.word	0x00008100
+    80d0:	00008128 	.word	0x00008128
 
 000080d4 <WaitForSeconds>:
-    80d4:	e59f401c 	ldr	r4, [pc, #28]	; 80f8 <while$1+0x14>
-    80d8:	e59f901c 	ldr	r9, [pc, #28]	; 80fc <while$1+0x18>
-    80dc:	e0080990 	mul	r8, r0, r9
-    80e0:	e1c460d4 	ldrd	r6, [r4, #4]
+    80d4:	e59f2044 	ldr	r2, [pc, #68]	; 8120 <while$1+0x14>
+    80d8:	e0010290 	mul	r1, r0, r2
+    80dc:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
+    80e0:	eb000007 	bl	8104 <WaitForMicroseconds>
+    80e4:	e49de004 	pop	{lr}		; (ldr lr, [sp], #4)
+    80e8:	e1a0f00e 	mov	pc, lr
 
-000080e4 <while$1>:
-    80e4:	e1c4a0d4 	ldrd	sl, [r4, #4]
-    80e8:	e04ac006 	sub	ip, sl, r6
-    80ec:	e15c0008 	cmp	ip, r8
-    80f0:	9afffffb 	bls	80e4 <while$1>
-    80f4:	e1a0f00e 	mov	pc, lr
-    80f8:	20003000 	.word	0x20003000
-    80fc:	000f4240 	.word	0x000f4240
+000080ec <WaitForMilliSeconds>:
+    80ec:	e3a02ffa 	mov	r2, #1000	; 0x3e8
+    80f0:	e0010290 	mul	r1, r0, r2
+    80f4:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
+    80f8:	eb000001 	bl	8104 <WaitForMicroseconds>
+    80fc:	e49de004 	pop	{lr}		; (ldr lr, [sp], #4)
+    8100:	e1a0f00e 	mov	pc, lr
+
+00008104 <WaitForMicroseconds>:
+    8104:	e59f4018 	ldr	r4, [pc, #24]	; 8124 <while$1+0x18>
+    8108:	e1c460d4 	ldrd	r6, [r4, #4]
+
+0000810c <while$1>:
+    810c:	e1c4a0d4 	ldrd	sl, [r4, #4]
+    8110:	e04ac006 	sub	ip, sl, r6
+    8114:	e15c0001 	cmp	ip, r1
+    8118:	9afffffb 	bls	810c <while$1>
+    811c:	e1a0f00e 	mov	pc, lr
+    8120:	000f4240 	.word	0x000f4240
+    8124:	20003000 	.word	0x20003000
