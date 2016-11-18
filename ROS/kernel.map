@@ -31,27 +31,28 @@ LOAD build/waitFor.o
  .init          0x0000000000008000        0x4 build/main.o
                 0x0000000000008000                _start
 
-.text           0x0000000000008004      0x160
+.text           0x0000000000008004      0x134
  *(.text)
  .text          0x0000000000008004       0x80 build/gpio.o
                 0x0000000000008004                GetGpioAddress
                 0x000000000000800c                SetGpioFunction
                 0x0000000000008044                SetGpio
- .text          0x0000000000008084       0x50 build/main.o
- .text          0x00000000000080d4       0x3c build/ok.o
-                0x00000000000080d4                OKinit
-                0x00000000000080e8                OKon
-                0x00000000000080fc                OKoff
- .text          0x0000000000008110       0x54 build/waitFor.o
-                0x0000000000008110                WaitForSeconds
-                0x0000000000008128                WaitForMilliSeconds
+ .text          0x0000000000008084       0x1c build/main.o
+ .text          0x00000000000080a0       0x3c build/ok.o
+                0x00000000000080a0                OKinit
+                0x00000000000080b4                OKon
+                0x00000000000080c8                OKoff
+ .text          0x00000000000080dc       0x5c build/waitFor.o
+                0x00000000000080dc                slightPause
+                0x00000000000080ec                WaitForSeconds
+                0x0000000000008100                WaitForMilliSeconds
 
-.data           0x0000000000008164        0x4
+.data           0x0000000000008138        0x4
  *(.data)
- .data          0x0000000000008164        0x0 build/gpio.o
- .data          0x0000000000008164        0x4 build/main.o
- .data          0x0000000000008168        0x0 build/ok.o
- .data          0x0000000000008168        0x0 build/waitFor.o
+ .data          0x0000000000008138        0x0 build/gpio.o
+ .data          0x0000000000008138        0x4 build/main.o
+ .data          0x000000000000813c        0x0 build/ok.o
+ .data          0x000000000000813c        0x0 build/waitFor.o
 
 /DISCARD/
  *(*)
