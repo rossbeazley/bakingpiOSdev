@@ -51,26 +51,26 @@ Disassembly of section .text:
 
 00008084 <main>:
     8084:	e3a0d902 	mov	sp, #32768	; 0x8000
-    8088:	e3a00010 	mov	r0, #16
-    808c:	e3a01001 	mov	r1, #1
-    8090:	ebffffdd 	bl	800c <SetGpioFunction>
-    8094:	e59f4034 	ldr	r4, [pc, #52]	; 80d0 <loop$+0x30>
-    8098:	e5944000 	ldr	r4, [r4]
-    809c:	e3a05000 	mov	r5, #0
+    8088:	eb000011 	bl	80d4 <OKinit>
+    808c:	e59f403c 	ldr	r4, [pc, #60]	; 80d0 <loop$+0x38>
+    8090:	e5944000 	ldr	r4, [r4]
+    8094:	e3a05000 	mov	r5, #0
 
-000080a0 <loop$>:
-    80a0:	e3a01001 	mov	r1, #1
-    80a4:	e1a01511 	lsl	r1, r1, r5
-    80a8:	e0011004 	and	r1, r1, r4
-    80ac:	e92d0030 	push	{r4, r5}
-    80b0:	e3a00010 	mov	r0, #16
-    80b4:	ebffffe2 	bl	8044 <SetGpio>
+00008098 <loop$>:
+    8098:	e3a01001 	mov	r1, #1
+    809c:	e1a01511 	lsl	r1, r1, r5
+    80a0:	e0011004 	and	r1, r1, r4
+    80a4:	e92d0030 	push	{r4, r5}
+    80a8:	eb00000e 	bl	80e8 <OKon>
+    80ac:	e3a000c8 	mov	r0, #200	; 0xc8
+    80b0:	eb00001c 	bl	8128 <WaitForMilliSeconds>
+    80b4:	eb000010 	bl	80fc <OKoff>
     80b8:	e3a000c8 	mov	r0, #200	; 0xc8
     80bc:	eb000019 	bl	8128 <WaitForMilliSeconds>
     80c0:	e8bd0030 	pop	{r4, r5}
     80c4:	e2855001 	add	r5, r5, #1
     80c8:	e205503f 	and	r5, r5, #63	; 0x3f
-    80cc:	eafffff3 	b	80a0 <loop$>
+    80cc:	eafffff1 	b	8098 <loop$>
     80d0:	00008164 	.word	0x00008164
 
 000080d4 <OKinit>:

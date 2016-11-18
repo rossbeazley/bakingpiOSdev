@@ -10,13 +10,8 @@ main:
 mov sp,#0x8000
 
 /* enable output on pin 16 */
-pinNum .req r0
-pinFunc .req r1
-mov pinNum,#16
-mov pinFunc,#1
-bl SetGpioFunction
-.unreq pinNum
-.unreq pinFunc
+bl OKinit
+
 
 ptrn .req r4
 ldr ptrn,=pattern
@@ -38,18 +33,18 @@ and r1,ptrn
 
 push {ptrn, seq}
 
-/* turn pin 16 on */
-pinNum .req r0
-pinVal .req r1
-mov pinNum,#16
-# mov pinVal,#0
-bl SetGpio
-.unreq pinNum
-.unreq pinVal
+bl OKon
 
 # sleep a bit
 mov r0, #200
 bl WaitForMilliSeconds
+
+bl OKoff
+
+# sleep a bit
+mov r0, #200
+bl WaitForMilliSeconds
+
 
 pop {ptrn,seq}
 
@@ -64,8 +59,3 @@ b loop$
 .align 2
 pattern:
 .int 0b11111111101010100010001000101010
-
-pattern2:
-.int 0b10101010111110101000101010101010
-
-

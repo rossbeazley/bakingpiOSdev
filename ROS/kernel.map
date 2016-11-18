@@ -46,12 +46,12 @@ LOAD build/waitFor.o
                 0x0000000000008110                WaitForSeconds
                 0x0000000000008128                WaitForMilliSeconds
 
-.data           0x0000000000008164        0x8
+.data           0x0000000000008164        0x4
  *(.data)
  .data          0x0000000000008164        0x0 build/gpio.o
- .data          0x0000000000008164        0x8 build/main.o
- .data          0x000000000000816c        0x0 build/ok.o
- .data          0x000000000000816c        0x0 build/waitFor.o
+ .data          0x0000000000008164        0x4 build/main.o
+ .data          0x0000000000008168        0x0 build/ok.o
+ .data          0x0000000000008168        0x0 build/waitFor.o
 
 /DISCARD/
  *(*)
