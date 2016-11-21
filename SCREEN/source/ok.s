@@ -22,3 +22,15 @@ mov r1,#1
 bl SetGpio
 pop {r0,r1,pc}
 
+
+.globl OKblink
+OKblink:
+push {lr}
+bl OKoff
+bl OKon
+bl slightPause
+bl OKoff
+bl slightPause
+pop {pc}
+
+
