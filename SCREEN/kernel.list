@@ -33,7 +33,7 @@ Disassembly of section .text:
     8054:	18bd8010 	popne	{r4, pc}
     8058:	e1a00004 	mov	r0, r4
     805c:	e8bd8010 	pop	{r4, pc}
-    8060:	000082b0 	.word	0x000082b0
+    8060:	000082a0 	.word	0x000082a0
 
 00008064 <GetGpioAddress>:
     8064:	e59f0074 	ldr	r0, [pc, #116]	; 80e0 <SetGpio+0x3c>
@@ -117,12 +117,12 @@ Disassembly of section .text:
 
 0000815c <main>:
     815c:	e3a0d902 	mov	sp, #32768	; 0x8000
-    8160:	eb000022 	bl	81f0 <OKinit>
+    8160:	eb000021 	bl	81ec <OKinit>
     8164:	e3a00b01 	mov	r0, #1024	; 0x400
     8168:	e3a01c03 	mov	r1, #768	; 0x300
     816c:	e3a02010 	mov	r2, #16
     8170:	ebffffa3 	bl	8004 <InitialiseFrameBuffer>
-    8174:	eb00002c 	bl	822c <OKblink>
+    8174:	eb00002b 	bl	8228 <OKblink>
     8178:	e3300000 	teq	r0, #0
     817c:	1a00000c 	bne	81b4 <noError$>
     8180:	e3a00010 	mov	r0, #16
@@ -133,96 +133,95 @@ Disassembly of section .text:
     8194:	ebffffc2 	bl	80a4 <SetGpio>
 
 00008198 <error$>:
-    8198:	eb000019 	bl	8204 <OKon>
-    819c:	eb000029 	bl	8248 <slightPause>
-    81a0:	eb000028 	bl	8248 <slightPause>
-    81a4:	eb000027 	bl	8248 <slightPause>
-    81a8:	eb00001a 	bl	8218 <OKoff>
-    81ac:	eb000025 	bl	8248 <slightPause>
+    8198:	eb000018 	bl	8200 <OKon>
+    819c:	eb000028 	bl	8244 <slightPause>
+    81a0:	eb000027 	bl	8244 <slightPause>
+    81a4:	eb000026 	bl	8244 <slightPause>
+    81a8:	eb000019 	bl	8214 <OKoff>
+    81ac:	eb000024 	bl	8244 <slightPause>
     81b0:	eafffff8 	b	8198 <error$>
 
 000081b4 <noError$>:
     81b4:	e1a04000 	mov	r4, r0
 
 000081b8 <render$>:
-    81b8:	eb00000c 	bl	81f0 <OKinit>
-    81bc:	e5943020 	ldr	r3, [r4, #32]
-    81c0:	e3a01c03 	mov	r1, #768	; 0x300
+    81b8:	e5943020 	ldr	r3, [r4, #32]
+    81bc:	e3a01c03 	mov	r1, #768	; 0x300
 
-000081c4 <drawRow$>:
-    81c4:	e3a02b01 	mov	r2, #1024	; 0x400
+000081c0 <drawRow$>:
+    81c0:	e3a02b01 	mov	r2, #1024	; 0x400
 
-000081c8 <drawPixel$>:
-    81c8:	e1c300b0 	strh	r0, [r3]
-    81cc:	e2833002 	add	r3, r3, #2
-    81d0:	e2422001 	sub	r2, r2, #1
-    81d4:	e3320000 	teq	r2, #0
-    81d8:	1afffffa 	bne	81c8 <drawPixel$>
-    81dc:	e2411001 	sub	r1, r1, #1
-    81e0:	e2800001 	add	r0, r0, #1
-    81e4:	e3310000 	teq	r1, #0
-    81e8:	1afffff5 	bne	81c4 <drawRow$>
-    81ec:	eafffff1 	b	81b8 <render$>
+000081c4 <drawPixel$>:
+    81c4:	e1c300b0 	strh	r0, [r3]
+    81c8:	e2833002 	add	r3, r3, #2
+    81cc:	e2422001 	sub	r2, r2, #1
+    81d0:	e3320000 	teq	r2, #0
+    81d4:	1afffffa 	bne	81c4 <drawPixel$>
+    81d8:	e2411001 	sub	r1, r1, #1
+    81dc:	e2800001 	add	r0, r0, #1
+    81e0:	e3310000 	teq	r1, #0
+    81e4:	1afffff5 	bne	81c0 <drawRow$>
+    81e8:	eafffff2 	b	81b8 <render$>
 
-000081f0 <OKinit>:
-    81f0:	e92d4003 	push	{r0, r1, lr}
-    81f4:	e3a00010 	mov	r0, #16
-    81f8:	e3a01001 	mov	r1, #1
-    81fc:	ebffff9a 	bl	806c <SetGpioFunction>
-    8200:	e8bd8003 	pop	{r0, r1, pc}
+000081ec <OKinit>:
+    81ec:	e92d4003 	push	{r0, r1, lr}
+    81f0:	e3a00010 	mov	r0, #16
+    81f4:	e3a01001 	mov	r1, #1
+    81f8:	ebffff9b 	bl	806c <SetGpioFunction>
+    81fc:	e8bd8003 	pop	{r0, r1, pc}
 
-00008204 <OKon>:
-    8204:	e92d4003 	push	{r0, r1, lr}
-    8208:	e3a00010 	mov	r0, #16
-    820c:	e3a01000 	mov	r1, #0
-    8210:	ebffffa3 	bl	80a4 <SetGpio>
-    8214:	e8bd8003 	pop	{r0, r1, pc}
+00008200 <OKon>:
+    8200:	e92d4003 	push	{r0, r1, lr}
+    8204:	e3a00010 	mov	r0, #16
+    8208:	e3a01000 	mov	r1, #0
+    820c:	ebffffa4 	bl	80a4 <SetGpio>
+    8210:	e8bd8003 	pop	{r0, r1, pc}
 
-00008218 <OKoff>:
-    8218:	e92d4003 	push	{r0, r1, lr}
-    821c:	e3a00010 	mov	r0, #16
-    8220:	e3a01001 	mov	r1, #1
-    8224:	ebffff9e 	bl	80a4 <SetGpio>
-    8228:	e8bd8003 	pop	{r0, r1, pc}
+00008214 <OKoff>:
+    8214:	e92d4003 	push	{r0, r1, lr}
+    8218:	e3a00010 	mov	r0, #16
+    821c:	e3a01001 	mov	r1, #1
+    8220:	ebffff9f 	bl	80a4 <SetGpio>
+    8224:	e8bd8003 	pop	{r0, r1, pc}
 
-0000822c <OKblink>:
-    822c:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
-    8230:	ebfffff8 	bl	8218 <OKoff>
-    8234:	ebfffff2 	bl	8204 <OKon>
-    8238:	eb000002 	bl	8248 <slightPause>
-    823c:	ebfffff5 	bl	8218 <OKoff>
-    8240:	eb000000 	bl	8248 <slightPause>
-    8244:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
+00008228 <OKblink>:
+    8228:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
+    822c:	ebfffff8 	bl	8214 <OKoff>
+    8230:	ebfffff2 	bl	8200 <OKon>
+    8234:	eb000002 	bl	8244 <slightPause>
+    8238:	ebfffff5 	bl	8214 <OKoff>
+    823c:	eb000000 	bl	8244 <slightPause>
+    8240:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
 
-00008248 <slightPause>:
-    8248:	e92d4001 	push	{r0, lr}
-    824c:	e3a000c8 	mov	r0, #200	; 0xc8
-    8250:	eb000005 	bl	826c <WaitForMilliSeconds>
-    8254:	e8bd8001 	pop	{r0, pc}
+00008244 <slightPause>:
+    8244:	e92d4001 	push	{r0, lr}
+    8248:	e3a000c8 	mov	r0, #200	; 0xc8
+    824c:	eb000005 	bl	8268 <WaitForMilliSeconds>
+    8250:	e8bd8001 	pop	{r0, pc}
 
-00008258 <WaitForSeconds>:
-    8258:	e59f203c 	ldr	r2, [pc, #60]	; 829c <while$1+0x14>
-    825c:	e0010290 	mul	r1, r0, r2
-    8260:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
-    8264:	eb000005 	bl	8280 <WaitForMicroseconds>
-    8268:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
+00008254 <WaitForSeconds>:
+    8254:	e59f203c 	ldr	r2, [pc, #60]	; 8298 <while$1+0x14>
+    8258:	e0010290 	mul	r1, r0, r2
+    825c:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
+    8260:	eb000005 	bl	827c <WaitForMicroseconds>
+    8264:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
 
-0000826c <WaitForMilliSeconds>:
-    826c:	e3a02ffa 	mov	r2, #1000	; 0x3e8
-    8270:	e0010290 	mul	r1, r0, r2
-    8274:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
-    8278:	eb000000 	bl	8280 <WaitForMicroseconds>
-    827c:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
+00008268 <WaitForMilliSeconds>:
+    8268:	e3a02ffa 	mov	r2, #1000	; 0x3e8
+    826c:	e0010290 	mul	r1, r0, r2
+    8270:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
+    8274:	eb000000 	bl	827c <WaitForMicroseconds>
+    8278:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
 
-00008280 <WaitForMicroseconds>:
-    8280:	e59f4018 	ldr	r4, [pc, #24]	; 82a0 <while$1+0x18>
-    8284:	e1c460d4 	ldrd	r6, [r4, #4]
+0000827c <WaitForMicroseconds>:
+    827c:	e59f4018 	ldr	r4, [pc, #24]	; 829c <while$1+0x18>
+    8280:	e1c460d4 	ldrd	r6, [r4, #4]
 
-00008288 <while$1>:
-    8288:	e1c4a0d4 	ldrd	sl, [r4, #4]
-    828c:	e04ac006 	sub	ip, sl, r6
-    8290:	e15c0001 	cmp	ip, r1
-    8294:	9afffffb 	bls	8288 <while$1>
-    8298:	e1a0f00e 	mov	pc, lr
-    829c:	000f4240 	.word	0x000f4240
-    82a0:	20003000 	.word	0x20003000
+00008284 <while$1>:
+    8284:	e1c4a0d4 	ldrd	sl, [r4, #4]
+    8288:	e04ac006 	sub	ip, sl, r6
+    828c:	e15c0001 	cmp	ip, r1
+    8290:	9afffffb 	bls	8284 <while$1>
+    8294:	e1a0f00e 	mov	pc, lr
+    8298:	000f4240 	.word	0x000f4240
+    829c:	20003000 	.word	0x20003000

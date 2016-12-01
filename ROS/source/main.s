@@ -17,11 +17,8 @@ bl OKon
 bl slightPause
 bl OKoff
 bl slightPause
+
+bl OKblink
+
+
 b loop$
-
-
-
-.section .data
-.align 2
-pattern:
-.int 0b11111111101010100010001000101010

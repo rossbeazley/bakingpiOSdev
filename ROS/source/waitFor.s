@@ -50,7 +50,7 @@ WaitForMicroseconds:
     /* check if lTmp >  wait time */
     cmp lTmp, lWaitMicroSeconds
     bls while$1 /* if lTmp is bigger than wait time, we branch(loop) is negative */
-    
+
     .unreq cTimerBase
     .unreq lStartTime
     .unreq lTimeDiscard

@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcd8a866-8b70-4113-bc0a-aabb89925373" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../ROS/build/output.elf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/source/postman.s" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/main..old" afterPath="$PROJECT_DIR$/source/main.s" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../OK/kernel.img" afterPath="$PROJECT_DIR$/../OK/kernel.img" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ROS/kernel.img" afterPath="$PROJECT_DIR$/../ROS/kernel.img" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kernel.img" afterPath="$PROJECT_DIR$/kernel.img" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../OK/build/output.elf" afterPath="$PROJECT_DIR$/../OK/build/output.elf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/output.elf" afterPath="$PROJECT_DIR$/build/output.elf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install.sh" afterPath="$PROJECT_DIR$/install.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../OK/kernel.list" afterPath="$PROJECT_DIR$/../OK/kernel.list" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ROS/kernel.list" afterPath="$PROJECT_DIR$/../ROS/kernel.list" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kernel.list" afterPath="$PROJECT_DIR$/kernel.list" />
@@ -17,12 +15,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ROS/kernel.map" afterPath="$PROJECT_DIR$/../ROS/kernel.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kernel.map" afterPath="$PROJECT_DIR$/kernel.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ROS/source/main.s" afterPath="$PROJECT_DIR$/../ROS/source/main.s" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/main.s" afterPath="$PROJECT_DIR$/source/main.s" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ROS/.idea/misc.xml" afterPath="$PROJECT_DIR$/../ROS/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ROS/source/ok.s" afterPath="$PROJECT_DIR$/../ROS/source/ok.s" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/ok.s" afterPath="$PROJECT_DIR$/source/ok.s" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ROS/source/waitFor.s" afterPath="$PROJECT_DIR$/../ROS/source/waitFor.s" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/waitFor.s" afterPath="$PROJECT_DIR$/source/waitFor.s" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ROS/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../ROS/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SCREEN.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,7 +49,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.068966">
+            <state vertical-scroll-proportion="-18.62069">
               <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
@@ -71,14 +69,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="frameBuffer.s" pinned="false" current-in-tab="true">
+      <file leaf-file-name="frameBuffer.s" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/frameBuffer.s">
           <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12733446">
-              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+            <state vertical-scroll-proportion="-2.142857">
+              <caret line="8" column="34" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -90,21 +88,21 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.5517242">
-              <caret line="3" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="11" />
+            <state vertical-scroll-proportion="-4.137931">
+              <caret line="8" column="15" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.s" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.s" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/main.s">
           <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6551723">
-              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+            <state vertical-scroll-proportion="-0.6876061">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -116,7 +114,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="20.655172">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -137,8 +135,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/source/ok.s" />
-        <option value="$PROJECT_DIR$/source/main.s" />
         <option value="$PROJECT_DIR$/source/frameBuffer.s" />
+        <option value="$PROJECT_DIR$/source/main.s" />
       </list>
     </option>
   </component>
@@ -223,6 +221,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../hockeyapp-plugin_62mkv/hockeyapp-plugin/pom.xml" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -479,12 +478,12 @@
       <created>1479731132333</created>
       <option name="number" value="Default" />
       <updated>1479731132333</updated>
-      <workItem from="1479731138063" duration="1698000" />
+      <workItem from="1479731138063" duration="6534000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1698000" />
+    <option name="totallyTimeSpent" value="6534000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="26" y="53" width="1400" height="765" extended-state="0" />
@@ -540,6 +539,14 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -559,46 +566,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/ok.s">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.068966">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/waitFor.s">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5517242">
-          <caret line="3" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/main.s">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6551723">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/mailbox.s">
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="20.655172">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/ok.s">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.62069">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -608,8 +593,30 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12733446">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        <state vertical-scroll-proportion="-2.142857">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/waitFor.s">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.137931">
+          <caret line="8" column="15" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/main.s">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6876061">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>

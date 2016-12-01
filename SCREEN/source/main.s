@@ -11,7 +11,11 @@ mov sp,#0x8000
 
 bl OKinit
 
-
+bl OKblink
+bl OKblink
+bl OKblink
+bl slightPause
+bl slightPause
 
 /* setup the screen.
 */
@@ -53,11 +57,11 @@ bl OKblink
 
 
 render$:
-	bl OKinit
 	fbAddr .req r3
 	ldr fbAddr,[fbInfoAddr,#32]
 
 	colour .req r0
+
 	y .req r1
 	mov y,#768
 	drawRow$:
@@ -65,7 +69,7 @@ render$:
 		mov x,#1024
 		drawPixel$:
 			strh colour,[fbAddr]
-			add fbAddr,#2
+			add fbAddr,#2 /* add two bytes as we are in 16bit colour mode */
 			sub x,#1
 			teq x,#0
 			bne drawPixel$

@@ -39,7 +39,7 @@ LOAD build/waitFor.o
  .init          0x0000000000008000        0x4 build/main.o
                 0x0000000000008000                _start
 
-.text           0x0000000000008004      0x2a0
+.text           0x0000000000008004      0x29c
  *(.text)
  .text          0x0000000000008004       0x60 build/frameBuffer.o
                 0x0000000000008004                InitialiseFrameBuffer
@@ -51,26 +51,26 @@ LOAD build/waitFor.o
                 0x00000000000080e4                GetMailboxBase
                 0x00000000000080ec                MailboxWrite
                 0x0000000000008120                MailboxRead
- .text          0x000000000000815c       0x94 build/main.o
- .text          0x00000000000081f0       0x58 build/ok.o
-                0x00000000000081f0                OKinit
-                0x0000000000008204                OKon
-                0x0000000000008218                OKoff
-                0x000000000000822c                OKblink
- .text          0x0000000000008248       0x5c build/waitFor.o
-                0x0000000000008248                slightPause
-                0x0000000000008258                WaitForSeconds
-                0x000000000000826c                WaitForMilliSeconds
+ .text          0x000000000000815c       0x90 build/main.o
+ .text          0x00000000000081ec       0x58 build/ok.o
+                0x00000000000081ec                OKinit
+                0x0000000000008200                OKon
+                0x0000000000008214                OKoff
+                0x0000000000008228                OKblink
+ .text          0x0000000000008244       0x5c build/waitFor.o
+                0x0000000000008244                slightPause
+                0x0000000000008254                WaitForSeconds
+                0x0000000000008268                WaitForMilliSeconds
 
-.data           0x00000000000082b0       0x30
+.data           0x00000000000082a0       0x30
  *(.data)
- .data          0x00000000000082b0       0x30 build/frameBuffer.o
-                0x00000000000082b0                FrameBufferInfo
- .data          0x00000000000082e0        0x0 build/gpio.o
- .data          0x00000000000082e0        0x0 build/mailbox.o
- .data          0x00000000000082e0        0x0 build/main.o
- .data          0x00000000000082e0        0x0 build/ok.o
- .data          0x00000000000082e0        0x0 build/waitFor.o
+ .data          0x00000000000082a0       0x30 build/frameBuffer.o
+                0x00000000000082a0                FrameBufferInfo
+ .data          0x00000000000082d0        0x0 build/gpio.o
+ .data          0x00000000000082d0        0x0 build/mailbox.o
+ .data          0x00000000000082d0        0x0 build/main.o
+ .data          0x00000000000082d0        0x0 build/ok.o
+ .data          0x00000000000082d0        0x0 build/waitFor.o
 
 /DISCARD/
  *(*)
